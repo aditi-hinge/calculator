@@ -12,7 +12,10 @@
 </head>
 <body>
     <div id="calc-body">
-        <div id="screen"></div>
+        <div id="screen">
+            <div id="equation-display"></div>
+            <div id="solution-display"></div>
+        </div>
         <div id="special-symbols">
             <div class="buttons special-symbols-buttons" data-value="">√</div>
             <div class="buttons special-symbols-buttons" data-value="3.14">𝛑</div>
@@ -21,45 +24,25 @@
         </div>
         <div id="contents">
             <div class="buttons bold-buttons" id="ac-button">AC</div>
-            <div class="buttons operators-button bold-buttons" id="brackets">( )</div>
-            <div class="buttons operators-button bold-buttons">%</div>
-            <div class="buttons operators-button bold-buttons">÷</div>
-            <div class="buttons">
-                <kbd>７</kbd>
-            </div>
-            <div class="buttons">
-                <kbd>８</kbd>
-            </div>
-            <div class="buttons">
-                <kbd>９</kbd>
-            </div>
-            <div class="buttons operators-button bold-buttons">×</div>
-            <div class="buttons">
-                <kbd>４</kbd>
-            </div>
-            <div class="buttons">
-                <kbd>５</kbd>
-            </div>
-            <div class="buttons">
-                <kbd>６</kbd>
-            </div>
-            <div class="buttons operators-button">ー</div>
-            <div class="buttons" data-value="1">
-                <kbd>１</kbd>
-            </div>
-            <div class="buttons" data-value="2">
-                <kbd>２</kbd>
-            </div>
-            <div class="buttons" data-value="3">
-                <kbd>３</kbd>
-            </div>
-            <div class="buttons operators-button">＋</div>
-            <div class="buttons">
-                <kbd>０</kbd>
-            </div>
-            <div class="buttons period-button">•</div>
-            <div class="buttons">⌫</div>
-            <div class="buttons" id="equals-button">＝</div>
+            <div class="buttons operators bold-buttons" id="brackets">( )</div>
+            <div class="buttons operators bold-buttons">%</div>
+            <div class="buttons operators bold-buttons"> / </div>
+            <div class="buttons numbers"><kbd>7</kbd></div>
+            <div class="buttons numbers"><kbd>8</kbd></div>
+            <div class="buttons numbers"><kbd>9</kbd></div>
+            <div class="buttons operators bold-buttons"> * </div>
+            <div class="buttons numbers"><kbd>4</kbd></div>
+            <div class="buttons numbers"><kbd>5</kbd></div>
+            <div class="buttons numbers"><kbd>6</kbd></div>
+            <div class="buttons operators"> - </div>
+            <div class="buttons numbers"><kbd>1</kbd></div>
+            <div class="buttons numbers"><kbd>2</kbd></div>
+            <div class="buttons numbers"><kbd>3</kbd></div>
+            <div class="buttons operators"> + </div>
+            <div class="buttons numbers"><kbd>0</kbd></div>
+            <div class="buttons period-button">.</div>
+            <div class="buttons" id="delete">⌫</div>
+            <div class="buttons" id="equals-button">=</div>
         </div>
     </div>
 
