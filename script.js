@@ -151,7 +151,7 @@ document.querySelectorAll(".operators").forEach(operator => {
      })
    })
 
-
+//equals button
 equalsButton.addEventListener("click", () => {
     let display = solutionDisplay.textContent;
       if(!display|| display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
