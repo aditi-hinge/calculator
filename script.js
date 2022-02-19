@@ -118,9 +118,10 @@ document.querySelectorAll(".buttons").forEach(button => {
 //display buttons on screen
 document.querySelectorAll(".numbers").forEach(number => {
     number.addEventListener("click",()=>{
-        if(solutionDisplay.textContent.length > 16  || solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-        || solutionDisplay.textContent ==="Domain error" || solutionDisplay.textContent ==="Value too large"){
-            return;}
+    let display = solutionDisplay.textContent;
+    if(display > 16 || display ==="Format error"||display === "Can't calculate"
+    || display ==="Domain error" || display ==="Can't divide by 0" || display ==="Not possible" ||
+        display === "Value too large") return;
     solutionDisplay.textContent += number.textContent;
     })
 });
@@ -129,10 +130,11 @@ document.querySelectorAll(".numbers").forEach(number => {
 //operators event listener function
 document.querySelectorAll(".operators").forEach(operator => {
     operator.addEventListener("click", () => {
-        if(solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-        || solutionDisplay.textContent ==="Domain error" || solutionDisplay.textContent ==="Value too large"){
-            return;
-        }
+        let display = solutionDisplay.textContent;
+      if(display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
+      || display ==="Can't divide by 0" || display ==="Not possible" ||
+        display === "Value too large")  return;
+
         let operatorsArray = ["+", "-", "*", "/"];
         //only evaluate a single pair of numbers at a time
         if (operatorsArray.some(el => solutionDisplay.textContent.includes(el))) {
@@ -151,13 +153,12 @@ document.querySelectorAll(".operators").forEach(operator => {
 
 
 equalsButton.addEventListener("click", () => {
-    let initialDisplay = solutionDisplay.textContent;
-    if(!initialDisplay){return;}
-    if(solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-        || solutionDisplay.textContent ==="Domain error" || solutionDisplay.textContent === "Value too large"){
-            return;
-        }
-    let arrayFromDisplay = initialDisplay.split(" ");
+    let display = solutionDisplay.textContent;
+      if(!display|| display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
+      || display ==="Can't divide by 0" || display ==="Not possible" ||
+        display === "Value too large")  return; 
+       
+    let arrayFromDisplay = display.split(" ");
     let num2 = arrayFromDisplay[arrayFromDisplay.length - 1];
     let num1 = arrayFromDisplay[0];
         if (!num1 || !num2){solutionDisplay.textContent = "Format error"; return;}
@@ -178,14 +179,13 @@ acButton.addEventListener("click", () => {
 //delete button
 deleteButton.addEventListener("click", ()=>{
     let display = solutionDisplay.textContent;
-    if(!display){equationDisplay.textContent = "";
-    return;}
-    else if (display ==="Format error"||display === "Can't calculate"
-    || display ==="Domain error" || display === "Value too large"){
-        {equationDisplay.textContent = "";
+    if(!display || display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
+    || display ==="Can't divide by 0" || display ==="Not possible" ||
+      display === "Value too large") {
+        equationDisplay.textContent = "";
         solutionDisplay.textContent = "";
-        }}
-        else{    
+    }
+    else{    
     //to remove spaces in the equation
         display.replace(/\s/g,"");
         let lastNumberArray = display.split("");
@@ -197,11 +197,11 @@ deleteButton.addEventListener("click", ()=>{
 
 //percentage
 percentage.addEventListener("click", () => {
-    if(!solutionDisplay.textContent){return;}
-    if(solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-        || solutionDisplay.textContent ==="Domain error" ||solutionDisplay.textContent === "Value too large"){
-            return;
-        }
+    let display = solutionDisplay.textContent;
+    if(!display || display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
+    || display ==="Can't divide by 0" || display ==="Not possible" ||
+      display === "Value too large") return;
+    
     else if (solutionDisplay.textContent.includes(" ")) {
         let display = solutionDisplay.textContent;
         let lastNumber = display.split(" ").pop();
@@ -221,9 +221,11 @@ percentage.addEventListener("click", () => {
 
 //root
 root.addEventListener("click", () => {
-    if(!solutionDisplay.textContent || solutionDisplay.textContent ==="Can't calculate"
-    || solutionDisplay.textContent ==="Format error" || solutionDisplay.textContent === "Value too large"
-     || solutionDisplay.textContent ==="Domain error"){return;}
+    let display = solutionDisplay.textContent;
+    if(!display || display ==="Format error"||display === "Can't calculate" || display ==="Domain error" 
+        || display ==="Can't divide by 0" || display ==="Not possible" ||
+         display === "Value too large") return;
+
     else if (solutionDisplay.textContent.includes(" ")) {
         let display = solutionDisplay.textContent;
         let lastNumber = display.split(" ").pop();
@@ -244,7 +246,9 @@ root.addEventListener("click", () => {
 pi.addEventListener("click",()=>{
     let display = solutionDisplay.textContent;
     if(display ==="Format error"||display === "Can't calculate"
-    || display ==="Domain error" || display ==="Value too large"){return;}
+    || display ==="Domain error" || display ==="Value too large" || display ==="Can't divide by 0" 
+    || display ==="Not possible") return;
+
     // for blank screen
     if(!solutionDisplay.textContent){
         solutionDisplay.textContent = 3.14;
@@ -281,7 +285,8 @@ pi.addEventListener("click",()=>{
 factorial.addEventListener("click", ()=>{
     let display = solutionDisplay.textContent;
     if(!display || display ==="Format error"||display === "Can't calculate"
-    || display ==="Domain error"){
+    || display ==="Domain error" || display ==="Can't divide by 0" || display ==="Not possible"
+    || display ==="Value too large"){
         equationDisplay.textContent = "";
         solutionDisplay.textContent = "";
         return;}
@@ -332,16 +337,22 @@ factorial.addEventListener("click", ()=>{
 exponent.addEventListener("click",()=>{
     let display = solutionDisplay.textContent;
     if(!display || display ==="Can't calculate" || display ==="Format error" ||
-    display ==="Value too large" || display ==="Domain error" || display.includes("^")){return;}
+    display ==="Value too large" || display ==="Domain error" || display ==="Can't divide by 0" 
+    || display ==="Not possible" || display.includes("^")) return;
+
     solutionDisplay.textContent += " ^ ";
 })
 
 
 //period
 period.addEventListener("click", ()=>{
-    if(!solutionDisplay.textContent){solutionDisplay.textContent = "0.";}
-    else if (solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-    || solutionDisplay.textContent ==="Domain error"){return;}
+    let display = solutionDisplay.textContent;
+    if(!display) solutionDisplay.textContent = "0.";
+
+    else if(display ==="Format error"||display === "Can't calculate"  || display ==="Domain error"
+     || display ==="Value too large" || display ==="Can't divide by 0" || display ==="Not possible")
+      return;
+
     else if(solutionDisplay.textContent.includes(" ")){
         let display = solutionDisplay.textContent;
         let num2 = display.split(" ").pop();
@@ -358,9 +369,11 @@ period.addEventListener("click", ()=>{
 
 //square
 square.addEventListener("click", ()=>{
-    if(!solutionDisplay.textContent){return;}
-    else if (solutionDisplay.textContent==="Format error"||solutionDisplay.textContent==="Can't calculate"
-    || solutionDisplay.textContent ==="Domain error"){return;}
+    let display = solutionDisplay.textContent;
+    if(!display || display ==="Format error"||display === "Can't calculate"
+        || display ==="Domain error" || display ==="Can't divide by 0" || display ==="Not possible"
+        || display ==="Value too large") return;
+
     else if(solutionDisplay.textContent.includes(" ")){
         let display = solutionDisplay.textContent;
         let num1 = display.split(" ").shift();
