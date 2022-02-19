@@ -119,7 +119,7 @@ document.querySelectorAll(".buttons").forEach(button => {
 document.querySelectorAll(".numbers").forEach(number => {
     number.addEventListener("click",()=>{
     let display = solutionDisplay.textContent;
-    if(display > 16 || display ==="Format error"||display === "Can't calculate"
+    if(display.length > 16 || display ==="Format error"||display === "Can't calculate"
     || display ==="Domain error" || display ==="Can't divide by 0" || display ==="Not possible" ||
         display === "Value too large") return;
     solutionDisplay.textContent += number.textContent;
