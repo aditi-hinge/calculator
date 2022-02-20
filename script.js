@@ -161,7 +161,7 @@ equalsButton.addEventListener("click", () => {
     let arrayFromDisplay = display.split(" ");
     let num2 = arrayFromDisplay[arrayFromDisplay.length - 1];
     let num1 = arrayFromDisplay[0];
-        if (!num1 || !num2){solutionDisplay.textContent = "Format error"; return;}
+        if (!num1 || !num2 || num2==="."){solutionDisplay.textContent = "Format error"; return;}
     let operatorChoice = `${arrayFromDisplay[1]}`;
     let finalDisplay = solutionDisplay.textContent;
     equationDisplay.textContent = finalDisplay;
