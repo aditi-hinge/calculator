@@ -1,6 +1,6 @@
 # calculator
 
-## Made by Vanilla Javascript, html and css
+## Made with Vanilla Javascript, html and css
 
 
 
