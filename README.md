@@ -1,10 +1,21 @@
 # calculator
 
-This project was really fun to complete. The design for this calculator was inspired by the calculator on my andriod phone.
-I decided to add features like factorial,pi, square, square root, exponent, percentage, decimal and a delete button!
+## Made by Vanilla Javascript, html and css
 
-The fact that I was able to figure out the functions and populate the calculator display with it made me happy.
 
-This marks the last project of the foundations course and so being able to make this project proved myself my skills, which makes me feel grateful.
+https://user-images.githubusercontent.com/95167364/186553707-3aa076e9-28e9-4b40-a311-96079c9febf2.mp4
+
+
+###### Features:
+* *Addition*
+* *Multiplication*
+* *Division*
+* *Subtraction*
+* *Square*
+* *Square root*
+* *Percentage*
+* *Factorial*
+* *Pi*
+* *Decimal Numbers*
 
 The background picture is courtesy to pixelbay.com
